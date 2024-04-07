@@ -8,25 +8,24 @@ import articles from "../articles.json";
 export default function App() {
   const [clicks, setClicks] = useState(0);
 
-  // const [obj, setObj] = useState({
-  //   a: 0,
-  //   b: 0,
-  //   c: {
-  //     x: 5,
-  //     y: 10,
-  //   },
-  // });
+  const [obj, setObj] = useState({
+    a: 0,
+    b: 0,
+    c: {
+      x: 5,
+      y: 10,
+    },
+  });
 
-  // const handleChangeObj = () => {
-  //   setObj({
-  //     ...obj,
-  //     c: {
-  //       ...obj.c,
-  //       x: 100,
-  //     },
-  //   });
-  //   console.log("obj", obj);
-  // };
+  const handleChangeObj = () => {
+    setObj({
+      ...obj,
+      c: {
+        ...obj.c,
+        x: 100,
+      },
+    });
+  };
 
   const handleClicks = () => {
     setClicks(clicks + 1);
@@ -36,14 +35,14 @@ export default function App() {
       <h1>State in React</h1>
       <hr />
       <Reader data={articles}></Reader>
-      {/* <button onClick={handleChangeObj}>Change obj state </button> */}
-      {/* <ClickCounter value={clicks} onUpdate={handleClicks} />
+      <button onClick={handleChangeObj}>Change obj state </button>
       <ClickCounter value={clicks} onUpdate={handleClicks} />
-      <ClickCounter value={clicks} onUpdate={handleClicks} /> */}
+      <ClickCounter value={clicks} onUpdate={handleClicks} />
+      <ClickCounter value={clicks} onUpdate={handleClicks} />
       <hr />
-      {/* <Toggler></Toggler>
       <Toggler></Toggler>
-      <Toggler></Toggler> */}
+      <Toggler></Toggler>
+      <Toggler></Toggler>
     </div>
   );
 }
